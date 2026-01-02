@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Café & Blogs</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    
+    <body>
+
+        <!-- Vídeo de fundo -->
+        <div class="caixa-video">
+            <video src="./img/videoCafe.mp4" loop muted autoplay></video>
+            <div class="mascara"></div>
+        </div>
+
+        <!-- Cabeçalho -->
+        <header class="header">
+            <section>
+               <a href="index.html"><img src="./img/logo.png" alt="Logo Cafeteria"></a>
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#endereco">Endereço</a>
+                    <a href="./blogs/blogs.html">Blogs</a>
+                    <a href="./contato/contato.html">Contato</a>
+                </nav>
+               <!-- Redes sociais -->
+                <div class="redes-sociais">
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </section>
+        </header>
+
+        <!-- Seção principal -->
+        <section id="home" class="caixa-principal">
+            <div>
+                <h3>Café do Jeito Que Você Gosta</h3>
+                <p>Mais que café, entregamos experiências que aquecem a alma e tornam o dia mais especial.</p>
+            </div>
+        </section>
+        
+       <!-- Seção de Perguntas Inspiradoras -->
+        <section class="caixa-perguntas">
+            <div class="perguntas-container">
+                <h2 class="titulo-perguntas">Você já pensou sobre o seu café?.....</h2>
+                <ul class="lista-perguntas">
+                    <li>Você sabe de onde vem o café que desperta suas manhãs?</li>
+                    <li>O que transforma um simples espresso em uma verdadeira obra de arte?</li>
+                    <li>Já sentiu o aroma que conta histórias de séculos de tradição?</li>
+                    <li>Como o design, a cultura e a paixão se misturam em uma xícara de café?</li>
+                    <li>Quer descobrir os segredos por trás do café perfeito?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sobre nós -->
+        <section id="sobre" class="caixa-sobre">
+            <h2 class="titulo"><span>Sobre</span> Nós</h2>
+            <div class="sobre-container">
+                <div class="sobre-imagem">
+                    <img src="./img/copoCafe.jpg" alt="Café">
+                </div>
+                <div class="sobre-texto">
+                    <h3>O que torna o café tão especial?</h3>
+                    <p>É a mistura perfeita de histórias, aromas e sensações que convidam você a descobrir mais.</p>
+                    <p>O segredo está nos detalhes: cada grão guarda um universo de aromas prontos para surpreender você.</p>
+                    <a href="./blogs/blogs.html" class="botao-link">Conheça Nossos Artigos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de endereço -->
+        <div class="mascara-modal"></div>
+            <div class="modal">
+                <h3 class="titulo"><span>Nosso</span> Endereço</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36566643.66546338!2d-65.00000000000001!3d-14.235004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9231fd6be1e3bc13%3A0x67b4d9f5bff1f3f3!2sBrasil!5e0!3m2!1spt-BR!2sbr!4v1700000000002!5m2!1spt-BR!2sbr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        
+        <footer class="rodape">
+                <div class="rodape-conteudo">
+                    <nav class="rodape-menu">
+                        <a href="#home">Home</a>
+                        <a href="#sobre">Sobre</a>
+                        <a href="#endereco">Endereço</a>
+                        <a href="./blogs/blogs.html">Blogs</a>
+                        <a href="./contato/contato.html">Contato</a>
+                    </nav>
+                </div>
+            <p class="rodape-copy">Direitos autorais © 2025 Blogs Café</p>
+            <div class="rodape-links-legais">
+                <a href="politica.html" target="_blank">Política de Privacidade</a><br>
+                <a href="termos.html" target="_blank">Termos de Uso</a>
+            </div>
+        </footer>
+        
+        <script src="js/main.js"></script>
+
+    </body>
+</html>

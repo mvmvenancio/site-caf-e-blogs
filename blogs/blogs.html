@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Café & Blogs</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    
+    <body>
+        
+        <!-- Vídeo de fundo -->
+        <div class="caixa-video">
+            <video src="../img/videoCafe.mp4" loop muted autoplay></video>
+            <div class="mascara"></div>
+        </div>
+
+        <!-- Cabeçalho -->
+        <header class="header">
+            <section>
+               <a href="index.html"><img src="../img/logo.png" alt="Logo Cafeteria"></a>
+                <nav>
+                    <a href="../index.html#home">Home</a>
+                    <a href="../index.html#sobre">Sobre</a>
+                    <a href="#endereco">Endereço</a>
+                    <a href="../blogs/blogs.html">Blogs</a>
+                    <a href="../contato/contato.html">Contato</a>
+                </nav>
+               <!-- Redes sociais -->
+                <div class="redes-sociais">
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </section>
+        </header>
+        <br>
+        
+    <div class="filtro-wrapper">
+        <div class="filtro-container">
+            <input type="text" id="filtro" placeholder="Filtrar posts..." onkeyup="filtrarPosts()">
+        </div>
+    </div>
+        
+    <div class="post-list">
+
+        <div class="post-item">
+          <img src="../img/cafeBard.png" alt="Post 1">
+          <div class="post-content">
+            <a href="../blogs/artigo.html?id=1" class="post-title">Café Gourmet: Um universo de aromas e sabores</a>
+            <div class="post-date">28/09/2025 - 05h15 - <span>Autor: Anônimo</span></div>
+          </div>
+        </div>
+
+        <div class="post-item">
+          <img src="../img/cafeBardDois.png" alt="Post 2">
+          <div class="post-content">
+            <a href="../blogs/artigo.html?id=2" class="post-title">Café: O melhor amigo das manhãs</a>
+            <div class="post-date">21/09/2025 - 19h42 - <span>Autor: Anônimo</span></div>
+          </div>
+        </div>
+
+        <div class="post-item">
+          <img src="../img/cafeBardTres.png" alt="Post 3">
+          <div class="post-content">
+            <a href="../blogs/artigo.html?id=3" class="post-title">Café dos Sonhos: A busca pela xícara perfeita</a>
+            <div class="post-date">14/09/2025 - 05h09 - <span>Autor: Anônimo</span></div>
+          </div>
+        </div>
+        
+        <div class="post-item">
+          <img src="../img/cafeBardQuatro.png" alt="Post 4">
+          <div class="post-content">
+            <a href="../blogs/artigo.html?id=4" class="post-title">O Simples Café Gourmet</a>
+            <div class="post-date">07/09/2025 - 10h15 - <span>Autor: Anônimo</span></div>
+          </div>
+        </div>
+
+        <div class="post-item">
+          <img src="../img/cafeBardCinco.png" alt="Post 5">
+          <div class="post-content">
+            <a href="../blogs/artigo.html?id=5" class="post-title">O Melhor Pingado das Manhãs</a>
+            <div class="post-date">01/09/2025 - 20h42 - <span>Autor: Anônimo</span></div>
+          </div>
+        </div>
+        
+    </div>   
+        <button id="btn-ver-mais" class="btn-ver-mais">VER MAIS</button>
+    </body>
+    
+    <!-- Modal de endereço -->
+        <div class="mascara-modal"></div>
+            <div class="modal">
+                <h3 class="titulo"><span>Nosso</span> Endereço</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36566643.66546338!2d-65.00000000000001!3d-14.235004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9231fd6be1e3bc13%3A0x67b4d9f5bff1f3f3!2sBrasil!5e0!3m2!1spt-BR!2sbr!4v1700000000002!5m2!1spt-BR!2sbr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        
+        <footer class="rodape">
+                <div class="rodape-conteudo">
+                    <nav class="rodape-menu">
+                        <a href="../index.html#home">Home</a>
+                        <a href="../index.html#sobre">Sobre</a>
+                        <a href="#endereco">Endereço</a>
+                        <a href="./blogs/blogs.html">Blogs</a>
+                        <a href="../contato/contato.html">Contato</a>
+                    </nav>
+                </div>
+            <p class="rodape-copy">Direitos autorais © 2025 Blogs Café</p>
+            <div class="rodape-links-legais">
+                <a href="../politica.html" target="_blank">Política de Privacidade</a><br>
+                <a href="../termos.html" target="_blank">Termos de Uso</a>
+            </div>
+        </footer>
+        
+        <script src="../js/main.js"></script>
+        <script src="../js/blog.js"></script>
+    
+</html>

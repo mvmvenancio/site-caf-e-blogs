@@ -1,0 +1,756 @@
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #c59d5f;
+    --black: #131313;
+    --bg: #010103;
+    --border: rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+}
+
+/* Vídeo */
+.caixa-video {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+.caixa-video video {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+}
+.mascara {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+}
+
+/* Cabeçalho */
+.header {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 2;
+    background: var(--bg);
+    border-bottom: 0.1rem solid var(--border);
+    width: 100vw;
+}
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* distribui logo, menu e ícones */
+    gap: 5rem;
+    padding: 1.5rem 0;
+}
+.header section a img {
+    height: 6rem;
+}
+.header nav a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+    transition: 0.4s linear;
+}
+.header nav a:hover {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Seções */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Seção principal */
+.caixa-principal {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.caixa-principal h3 {
+    color: #fff;
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+.caixa-principal p {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: lighter;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+.botao-link {
+    background: var(--main-color);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    color: #fff;
+    padding: 1rem 3rem;
+    border: none;
+    display: inline-block;
+    transition: 0.3s linear;
+}
+.botao-link:hover {
+    letter-spacing: 0.2rem;
+}
+
+/* Sobre nós */
+.titulo {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3rem;
+    font-size: 4rem;
+}
+.titulo span {
+    color: var(--main-color);
+}
+.caixa-sobre .sobre-container {
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.sobre-imagem {
+    flex: 1 1 45rem;
+}
+.sobre-imagem img {
+    width: 100%;
+}
+.sobre-texto {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+.sobre-texto h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+.sobre-texto p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #fff;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+/* Modal */
+.mascara-modal {
+    visibility: hidden;
+    z-index: 3;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+}
+.modal {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    gap: 20px;
+    z-index: 4;
+    position: fixed;
+    top: 50%;
+    left: -30%;
+    transform: translate(-50%, -50%);
+    transition: left 1s linear;
+}
+/* Rodapé */
+.rodape {
+    background: var(--bg); /* mesma cor do cabeçalho */
+    border-top: 0.1rem solid var(--border); /* igual ao header */
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column; /* menu em cima, texto embaixo */
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: flex-start; /* centraliza o menu */
+    margin-bottom: 2rem;
+}
+
+.rodape-menu {
+    display: flex;
+    flex-direction: column; /* mantém vertical */
+    gap: 1rem;
+    align-items: baseline;
+    padding-left: 8rem; 
+}
+
+.rodape-menu a {
+    color: #fff;
+    font-size: 1.8rem;
+    transition: 0.3s linear;
+}
+
+.rodape-menu a:hover {
+    color: var(--main-color);
+    padding-left: 0.5rem;
+}
+
+.rodape-copy {
+    color: #fff;
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+
+.rodape-copy {
+    color: #fff;
+    font-size: 1.4rem;
+    opacity: 0.8;
+    text-align: center;     /* garante alinhamento do texto */
+}
+/* Contato */
+.caixa-contato {
+    background: var(--black);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.form-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-contato input,
+.form-contato textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.6rem;
+}
+
+.form-contato textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-contato button {
+    background: var(--main-color);
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0.25rem;
+}
+
+.form-contato button:hover {
+    background: #a67c52;
+}
+
+/* Página de contato específica */
+.contato {
+    min-height: calc(100vh - 120px); /* desconta a altura do menu fixo */
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    justify-content: flex-start; /* centraliza horizontalmente */
+    background: var(--black);
+    padding: 2rem; /* só um respiro interno */
+    padding-top: 100px; /* altura do menu */
+    box-sizing: border-box; /* garante que padding não estoure a altura */
+}
+
+.contato form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 1rem;
+    width: 40vw;
+    max-width: none;
+    /* margin-left: 5vw; */
+
+    /* Novos estilos para destaque */
+    box-shadow: 0 0 20px rgba(197, 157, 95, 0.5); /* brilho dourado suave */
+    backdrop-filter: blur(5px); /* efeito de desfoque no fundo */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* borda sutil */
+}
+
+.contato h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.contato label {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.contato input,
+.contato textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.contato button {
+    width: 100%;
+    background: var(--main-color);
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+.contato button:hover {
+    background: #a67c52;
+}
+
+/* Layout responsivo */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--black);
+}
+
+main {
+    flex: 1;
+}
+
+.rodape {
+    margin-top: auto;
+}
+
+.post-list {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 40px;  
+}
+
+.post-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.post-item img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.post-content {
+  flex: 1;
+}
+
+.post-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.post-title:hover {
+  color: #c59d5f;
+}
+
+.post-date {
+  font-size: 1.5rem;
+  color: #ddd;
+}
+
+.btn-ver-mais {
+  width: fit-content;
+  margin: 1px auto 10px; /* Reduz a margem inferior */
+  padding: 4px 8px;
+  margin-bottom: 50px; /* controla só embaixo */
+  border: none;
+  background: #a3c9c6;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  /* Novo ajuste para o botão */
+  position: relative; /* Adiciona posicionamento relativo */
+  bottom: 0px; /* Adiciona uma margem inferior para movê-lo para cima */
+}
+
+.btn-ver-mais:hover {
+  background: #82b3af;
+}
+
+.post-item {
+    display: none;
+}
+
+.post-item:nth-child(-n+3) {
+    display: flex;
+}
+
+.filtro-wrapper {
+  max-width: 800px;
+  margin: 120px auto 1px auto; /* ↑ aumenta o topo | ↓ diminui a parte vermelha */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filtro-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filtro-container input {
+  padding: 10px 40px 10px 16px; /* espaço maior + espaço pro ícone */
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 15px;
+  width: 280px;
+  outline: none;
+  background: #fff url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat 250px center; 
+  background-size: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s ease-in-out;
+}
+
+.filtro-container input:focus {
+  border-color: #c49b63; /* cor café */
+  box-shadow: 0 0 8px rgba(196, 155, 99, 0.6);
+}
+.artigo img {
+  max-width: 300px; /* controla o tamanho da imagem */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+/* Alinha o conteúdo abaixo da imagem */
+.artigo {
+  display: none; /* esconde todos os artigos por padrão */
+  max-width: 800px;
+  margin: 60px auto; /* centraliza e dá espaço no topo */
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 5px; 
+}
+
+ .artigo h2 {
+  font-size: 32px;
+  margin: 20px 0 15px;
+  color: #fff; /* branco para destacar */
+  text-align: left; /* título alinhado à esquerda */
+}
+
+.artigo p {
+    font-size: 18px; /* maior e mais legível */
+    color: #f1f1f1; /* branco suave para não cansar */
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    
+}
+  /* Opcional: largura máxima de leitura tipo "blogs" */
+  .artigo-content {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+ .breadcrumb {
+  font-size: 14px;
+  margin: 15px 0;
+  color: #ccc;   /* cor do texto "apagado" */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* espaço entre autor e instagram */
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #fff;   /* cor dos links (ajuste se quiser outra) */
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+.breadcrumb .social-link {
+  margin-left: 10px; /* mais afastado do texto */
+  color: #fff;
+  font-size: 16px;
+}
+
+.breadcrumb .social-link:hover {
+  color: #E1306C; /* cor do Instagram */
+}
+/* --- Variáveis fáceis de ajustar --- */
+:root{
+  --article-max-width: 900px;   /* largura do bloco de texto / alinhamento */
+  --banner-width: 800px;        /* largura da imagem (ajuste) */
+  --banner-height: 200px;       /* altura da faixa da imagem (ajuste) */
+  --banner-gap-top: 40px;       /* distância entre a section / topo do bloco e a imagem */
+}
+
+/* Bloco do artigo (centraliza o conteúdo e força mesma largura) */
+.artigo {
+  max-width: var(--article-max-width);
+  margin: 0 auto;            /* centraliza todo o bloco */
+  padding: 20px;             /* espaçamento interno do bloco */
+  color: #fff;
+  background: transparent;   /* se quiser fundo escuro, definir aqui */
+  box-sizing: border-box;
+}
+
+/* Banner (área que fica igual ao destaque verde) */
+.article-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;           /* centraliza a imagem dentro do bloco */
+  margin-top: var(--banner-gap-top); /* distancia da section superior */
+  margin-bottom: 18px;               /* espaço entre imagem e breadcrumb/título */
+}
+
+/* A imagem em si — ocupa exatamente a largura do texto desejado */
+.article-banner .banner-img{
+  width: var(--banner-width);   /* largura fixa (relativa ao bloco) */
+  max-width: 100%;              /* evita overflow em telas pequenas */
+  height: var(--banner-height);
+  object-fit: cover;            /* recorta a imagem mantendo o enquadramento */
+  display: block;
+  border-radius: 6px;           /* borda sutil; remova se quiser quadrada */
+  filter: brightness(0.75);     /* escurece levemente para destacar texto */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* Breadcrumb e título — mantém alinhamento com o bloco */
+.breadcrumb {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.breadcrumb a { color: #fff; text-decoration: none; }
+.breadcrumb .social-link { margin-left:8px; }
+
+/* Título e paragráfos alinhados com a largura do bloco (já controlado por .artigo) */
+.artigo h2 {
+  font-size: 32px;
+  color: #fff;
+  margin: 6px 0 14px;
+}
+
+.artigo p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #eee;
+  text-align: justify;
+  margin-bottom: 14px;
+}
+
+/* --- Importante: sobrescreve regras antigas que possam afetar imagens globais --- */
+.artigo img:not(.banner-img) { /* outras imagens no artigo */
+  max-width: 100%;
+  height: auto;
+}
+.like-dislike-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1f1f1f;
+  border-radius: 20px;
+  padding: 6px 12px;
+  margin-top: 20px;
+}
+
+.btn-like, .btn-dislike {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
+}
+
+.btn-like:hover {
+  color: #4CAF50; /* verde */
+}
+
+.btn-dislike:hover {
+  color: #f44336; /* vermelho */
+}
+
+/* ===== Seção de Perguntas Inspiradoras ===== */
+.caixa-perguntas {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px; /* ← aumentei o espaçamento interno */
+    margin-bottom: 130px; /* ← aumenta a distância até o "Sobre Nós" */
+    position: relative;
+    overflow: hidden;
+}
+
+.caixa-perguntas::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url("../img/graosCafe.jpg") center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.perguntas-container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: aparecer 1.5s ease forwards;
+    opacity: 0;
+}
+
+.titulo-perguntas {
+    font-size: 2.4rem; /* ← aumentei o tamanho do título */
+    color: #d6a35b;
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.lista-perguntas {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 50px 0;
+}
+
+.lista-perguntas li {
+    font-size: 1.4rem; /* ← aumentei o tamanho das perguntas */
+    margin-bottom: 18px;
+    line-height: 1.8;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: subir 1s ease forwards;
+}
+
+.lista-perguntas li:nth-child(1) { animation-delay: 0.3s; }
+.lista-perguntas li:nth-child(2) { animation-delay: 0.6s; }
+.lista-perguntas li:nth-child(3) { animation-delay: 0.9s; }
+.lista-perguntas li:nth-child(4) { animation-delay: 1.2s; }
+.lista-perguntas li:nth-child(5) { animation-delay: 1.5s; }
+
+.botao-perguntas {
+    display: inline-block;
+    background-color: #d6a35b;
+    color: #fff;
+    padding: 14px 36px; /* botão um pouco maior */
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 1.1rem; /* texto do botão maior */
+}
+
+.botao-perguntas:hover {
+    background-color: #b8833b;
+    transform: scale(1.07);
+}
+
+/* ===== Animações ===== */
+@keyframes aparecer {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes subir {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== Redes Sociais ===== */
+.redes-sociais {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.redes-sociais a {
+    color: #d6a35b;
+    font-size: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 900px) {
+    .header section {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .redes-sociais {
+        margin-top: 8px;
+    }
+}
+.rodape-links-legais {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.rodape-links-legais a {
+  color: #c59d5f; /* tom dourado do tema */
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.rodape-links-legais a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
